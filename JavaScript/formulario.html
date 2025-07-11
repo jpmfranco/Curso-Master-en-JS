@@ -6,6 +6,18 @@
     <title>Ejercicio DOM, Eventos y funciones</title>
     
     <script src="JS/ejercicioDOM.js"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 250px;
+            float: left;
+            margin: 20px;
+        }
+        .dashed{
+            border: 3px dashed black;
+            padding: 10px;
+        }
+    </style>
 
 </head>
 <body>
@@ -18,16 +30,34 @@
 -->
 
     <h1>Ejercicio DOM, Eventos y funciones</h1>
-    <form action="" method="POST" id="form">
-        <label for="nombre">Nombre</label><br>
-        <input type="text" name="nombre" id="nombre"><br>
+    <div class="box">
+        <form action="#" method="POST" id="form" onsubmit="return false;">
+                <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" id="nombre"><br>
 
-        <label for="apellidos">Apellidos</label><br>
-        <input type="text" name="apellidos" id="apellidos"><br>
+                <label for="apellidos">Apellidos</label><br>
+                <input type="text" name="apellidos" id="apellidos"><br>
 
-        <label for="edad">Edad</label><br>
-        <input type="number" name="edad" id="edad"><br>
+                <label for="edad">Edad</label><br>
+                <input type="number" name="edad" id="edad"><br>
 
-        <button>Enviar</button>
+                <button>Enviar</button>
+        </form>
+    </div>
+    <div class="box dashed">
+        <h3>Información del usuario</h3>
+        <hr>
+        <p id="pn">
+            <strong>Nombre:</strong> <span></span>
+        </p>
+        <p id="pa">
+            <strong>Apellidos:</strong> <span></span>
+        </p>
+        <p id="pe">
+            <strong>Edad:</strong> <span></span>
+        </p>
+        
+    </div>
+    
 </body>
 </html>
