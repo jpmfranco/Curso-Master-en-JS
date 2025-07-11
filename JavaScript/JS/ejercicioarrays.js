@@ -11,19 +11,18 @@ de la pagina y en la consola.
 si lo encuentra y su indice
 */
 
-var num = [];
+var numeros = [];
 for(var i = 0; i<6;i++){
-    num.push(parseInt(prompt("Dame un numero")));
+   numeros.push(parseInt(prompt("Dame un numero")));
 }
-console.log(num);
-document.write(num);
-num.sort();
-console.log(num);
-num.reverse();
-console.log(num);
-console.log(num.length);
-var numeroUS = parseInt(prompt("Dime un numero a buscar: "));
-var nua =num.some(numero => numero == numeroUS);
-console.log(num.indexOf(numeroUS));
+console.log("Lista completa: ",numeros);
+document.write("<h1>Lista completa: </h1><br>"+numeros);
+numeros.sort();
+console.log(numeros);
+numeros.reverse();
+console.log(numeros);
+console.log(numeros.length);
+var busqueda = parseInt(prompt("Dime un numero a buscar: "));
+console.log(numeros.indexOf(busqueda));
 
 
