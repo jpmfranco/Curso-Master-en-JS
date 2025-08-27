@@ -1,13 +1,23 @@
 $(document).ready(function(){
+    
+    
     // slider
-    $('.bxslider').bxSlider({
-      mode: 'fade',
-      captions: true,
-      slideWidth: 1200,
-    });
+    if(window.location.href.indexOf('index') > -1){
+        $('.bxslider').bxSlider({
+        mode: 'fade',
+        captions: true,
+        slideWidth: 1200,
+        });
+        
+    }else{
+        $('#slider').hide();
+    }
+
+    
 
 
     //Posts
+     if(window.location.href.indexOf('index') > -1){
     var posts = [
         {
             title: "Prueba de titulo 1",
@@ -51,6 +61,7 @@ $(document).ready(function(){
     `;
         $("#posts").append(post);
     });
+    }
     var theme = $("#theme")
     //Selector de tema
     $("#to-green").click(function(){
@@ -88,5 +99,20 @@ $(document).ready(function(){
             location.reload();
         });
     }
-    
+
+    //acordeon
+    if(window.location.href.indexOf('about') > -1){
+        $("#acor").accordion();
+    }
+    //reloj
+    if(window.location.href.indexOf('reloj') > -1){
+        setInterval(function(){
+            var reloj = moment().format("h:mm:ss");
+            $("#reloj").html(reloj);
+        },1000);
+
+        
+        
+    }
+
 });
