@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="JS/jquery-ui-1.14.1/jquery-ui.structure.css">
     <link rel="stylesheet" href="JS/jquery-ui-1.14.1/jquery-ui.theme.min.css">
     <script src="JS/jquery-ui-1.14.1/jquery-ui.min.js"></script>
+    <!-- Plugin validacion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    
     <script src="JS/main.js"></script>
     </head>
 <body>
@@ -50,26 +53,36 @@
      <!-- Contenido -->
       <section id="cont">
         <div id="box">
-            <!-- cargar acordeon -->
-             <h2>Sobre mi</h2>
-             <div id="acor">
-                    <h3>¿Quienes somos?</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut justo sed nibh efficitur 
-                auctor. In volutpat quam finibus sapien bibendum tempus.
-                    </p>
+            <!-- cargar formulario -->
+             <h2>Contacto</h2>
+             <form action="" id ="contact" method="post">
+                 <label for="name">Nombre</label>
+                 <input type="text" name="name" data-validation="alphanumeric">
 
-                    <h3>Nuestros servicios</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut justo sed nibh efficitur 
-                auctor. In volutpat quam finibus sapien bibendum tempus.
-                    </p>
+                 <label for="apellido">Apellido</label>
+                 <input type="text" name="apellido" data-validation="alphanumeric">
 
-                    <h3>Nuestros Clientes</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut justo sed nibh efficitur 
-                auctor. In volutpat quam finibus sapien bibendum tempus.
-                    </p>
+                 <label for="email">Email</label>
+                 <input type="email" name="email" data-validation="email">
+
+                 <label for="sexo">Sexo</label>
+                 <select name="sexo" data-validation="required">
+                    <option value="man">Hombre</option>
+                    <option value="woman">Mujer</option>
+
+                 </select>
+
+                 <label for="date">Fecha de nacimiento</label>
+                 <input type="text" name="date" data-validation="date" data-validation-format="dd-mm-yyyy">
+
+                 <label for="edad">Edad</label>
+                 <input type="number" name="edad" data-validation="number">
+
+                 <input type="submit" value="Enviar">
+
+
+
+             </form>
              </div>
         </div>
         <aside id="sidebar">

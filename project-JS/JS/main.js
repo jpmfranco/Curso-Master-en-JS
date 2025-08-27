@@ -110,9 +110,16 @@ $(document).ready(function(){
             var reloj = moment().format("h:mm:ss");
             $("#reloj").html(reloj);
         },1000);
-
-        
-        
     }
-
+    //validacion
+    if(window.location.href.indexOf('contacto') > -1){
+        $("form input[name='date']").datepicker({
+            dateFormat:'dd-mm-yy'
+        });
+        $.validate({
+            lang: 'es',
+            errorMessagePosition: 'top',
+            scrollToTopOnError: true
+        });
+    }
 });
