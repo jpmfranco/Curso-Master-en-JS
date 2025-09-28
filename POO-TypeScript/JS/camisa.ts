@@ -1,5 +1,20 @@
+//interface
+interface CamisaBase{
+    setColor(color);
+    getColor();
+}
+
+function estampar(logo:string){
+    return function(target:Function){
+        target.prototype.estampacion = function():void{
+            console.log("Camiseta estampada con el logo de:" +logo);
+        }
+    }
+}
+
 // Clase (molde del objeto)
-class Camiseta{
+@estampar("Gucci")
+class Camiseta implements CamisaBase{
 // Propiedades (caracteristicas del objeto)
     public color: string;
     public modelo: string;
@@ -18,9 +33,28 @@ class Camiseta{
     public setColor(color: string){
         this.color = color;
     }
-    public getcolor(){
+    public getColor(){
         return this.color;
     }
 }
 
+// clase hija
+class Sudadera extends Camiseta{
+    public capucha: boolean;
+
+    setCapucha(cap:boolean){
+        this.capucha = cap;
+    }
+
+    getCapucha():boolean{
+        return this.capucha;
+    }
+}
+
+var camisa = new Camiseta("sdas","sdas","sadf","sdasd",12);
+console.log(camisa);
+
+var sudadera_nike = new Sudadera("sdas","sdas","sadf","sdasd",12);
+
+console.log(sudadera_nike,sudadera_nike.setCapucha(true));
 

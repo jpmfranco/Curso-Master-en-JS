@@ -1,5 +1,3 @@
-
-
 class Main{
     constructor(){
         console.log("Aplicacion JS cargada");
